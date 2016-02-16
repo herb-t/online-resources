@@ -7,7 +7,7 @@ describe('`const` is like `let` plus read-only', () => {
 
     it('number', () => {
       // const constNum = 0;
-      let constNum = 0;
+      const constNum = 0;
       // constNum = 1; // const is read only, cant have that
       assert.equal(constNum, 0);
     });
