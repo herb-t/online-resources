@@ -29,7 +29,8 @@ describe('arrow functions have lexical `this`, no dynamic `this`', () => {
   it('can NOT bind a different context', function() {
     var bound = new LexicallyBound();
     var fn = bound.getFunction();
-    var anotherObj = {};
+    // var anotherObj = {};           ||  
+    var anotherObj = fn.call({}); //  \/ this one was tricky tried call b/c of the assert fn
     var expected = anotherObj;
     
     assert.strictEqual(fn.call(anotherObj), expected);

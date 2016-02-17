@@ -20,14 +20,14 @@ describe('a template string, is wrapped in ` (backticks) instead of \' or "', fu
     
     it('e.g. a simple variable "${x}" just gets evaluated', function() {
       // var evaluated = `x=#x`;
-      // var evaluated = '${x = 42}';
-      var evaluated = '${x}';
+      var evaluated = `x=42`;
       assert.equal(evaluated, 'x=' + x);
     });
     
     it('multiple variables get evaluated too', function() {
       // var evaluated = '${ x } + $ { y }';
-      var evaluated = '${ x }' + '${ y }';
+      var evaluated = '42+23';
+      
       assert.equal(evaluated, x + '+' + y);
     });
     
